@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&family=Poppins&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root{
+    --colorDark1: #112d4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    color: var(--colorLight2);
+    /* background-image: linear-gradient(160deg, #112d4e 0%, #2f72af 100%); */
+    background: rgb(2,0,36);
+    background: linear-gradient(347deg, rgba(2,0,36,1) 0%, rgba(172,76,251,1) 0%, rgba(81,30,137,1) 0%, rgba(68,60,157,1) 7%, rgba(0,212,255,1) 100%);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.app{
+    margin: 20px auto;
+    height: 87vh;
+    /* height: 80v; */
+    width: 50rem;
+    /* max-width: 700px; */
+    background-color: #7c7c7c4b;
+    padding: 1px 10px;
+    border-radius: 20px;
+}
+
+.banner{
+    text-align: center;
+    padding-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 40px;
+}
+
+.tab-container{
+    display: flex;
+    width: 90%;
+    max-width: 550px;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.tab{
+    cursor: pointer;
+    letter-spacing: 1.75px;
+    font-size: 0.875rem;
+    padding: 5px 8px;
+}
+
+.tab.curr-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+.weather-container{
+    margin-block: 2rem;     /* top and bottom*/
+}
+
+.btn{
+    all: unset;     /* remove default styling property of button (also we can use appearance none)*/
+    background-color: var(--colorDark2);
+    background-color: #7c7c7cb0;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.sub-container{     /* align items center for all containers */    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Grant location page */
+.grant-loc-container{
+    display: none;
+    margin-top: 100px;
+}
+
+.grant-loc-container.active{
+    display: flex;
+}
+
+.grant-loc-container img{
+    margin-bottom: 2rem;
+}
+
+.grant-loc-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.grant-loc-container p:last-of-type{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+
+/* Loading page */
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.loading-container p{
+    text-transform: uppercase;
+
+}
+
+/* Weather info container */
+.weather-info-container{
+    display: none;
+}
+
+.weather-info-container.active{
+    display: flex;
+}
+
+.weather-info-container img{
+    height: 90px;
+    width: 90px;
+}
+
+.weather-info-container p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.weather-info-container p[temperature-data]{
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.name-flag{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 0 0.5rem;
+}
+
+.name-flag p{
+    font-size: 2rem;
+}
+
+.name-flag img{
+    width: 30px;
+    height: 24px;
+}
+
+
+/* cards container */
+.parameter-container{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.parameter{
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    align-items: center;
+}
+
+.parameter img{
+    width: 50px;
+    height: 50px;
+}
+
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+/* form container */
+.form-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    gap: 0 10px;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all: unset;
+    width: calc(100% - 80px);   /* minus 80 becouse of margin and search button*/
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+    font-family: Poppins, sans-serif;
+    font-size: 19px;
+}
+
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.form-container .btn{
+    width: 40px;
+    height: 40px;
+    display: flex;  /* for image*/
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: unset;
+    margin-bottom: 1px;
+}
+
+/* Error 404 */
+.error-404{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error-404.active{
+    display:flex;
+}
+
+.error-404 img{
+    height: 200px;
+    width: 280px;
+    margin: 40px;
+}
